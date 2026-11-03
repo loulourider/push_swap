@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 12:22:35 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 12:59:35 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 13:25:28 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	}
 	a = creat_stack(nbrs, argc - 1);
 	print_stacks(a, b);
-	ft_pb(&a, &b);
+	lst_up(&a);
 	print_stacks(a, b);
 	return (0);
 }

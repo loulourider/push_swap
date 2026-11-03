@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 09:34:25 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 12:58:17 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 13:25:36 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ int		ft_atoi(const char *str);
 int		parsing(int argc, char **argv);
 int		in_range(char *s);
 t_list	*creat_stack(int *nbrs, int size);
+void	ft_addback_a(t_list **a, int index);
+void	lst_up(t_list **lst);
 #endif
