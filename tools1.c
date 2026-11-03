@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/28 15:07:22 by username         #+#    #+#              */
-/*   Updated: 2026/10/29 11:33:37 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 12:48:12 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,29 @@ int	ft_putmem(void *ptr)
 	count = write(1, "0x", 2);
 	count += ft_puthex((unsigned long) ptr);
 	return (count);
+}
+
+int	in_range(char *s)
+{
+	long	n;
+	int		sign;
+	int		i;
+
+	n = 0;
+	sign = 1;
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (s[i])
+	{
+		n = n * 10 + (s[i] - '0');
+		if (n * sign > INT_MAX || n * sign < INT_MIN)
+			return (0);
+		i++;
+	}
+	return (1);
 }

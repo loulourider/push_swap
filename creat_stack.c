@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 10:29:29 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 11:13:00 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 12:46:47 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,30 +54,37 @@ t_list	*creat_stack(int *nbrs, int size)
 	return (stack);
 }
 
-int	main(void)
+static int	is_correct(char *s)
 {
-	int	nbrs[] =
-	{
-		1, 7, 3, 6, 2, 9, 0,
-	};
-	t_list	*a;
-	t_list	*b = NULL;
+	int	i;
 
-	a = creat_stack(nbrs, 7);
-	print_stacks(a, b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_printf("\n");
-	print_stacks(a, b);
-	ft_pa(&a, &b);
-	ft_pa(&a, &b);
-	ft_pa(&a, &b);
-	ft_pa(&a, &b);
-	ft_pa(&a, &b);
-	ft_pa(&a, &b);
-	print_stacks(a, b);
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	if (!s[i])
+		return (0);
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	parsing(int argc, char **argv)
+{
+	int	j;
+
+	j = 1;
+	while (j < argc)
+	{
+		if (!is_correct(argv[j]) || !in_range(argv[j]))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		j++;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/28 13:52:59 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 11:07:20 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 12:45:08 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putmem(void *ptr);
