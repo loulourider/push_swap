@@ -6,12 +6,12 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 10:29:29 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 10:53:47 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 11:13:00 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -54,15 +54,30 @@ t_list	*creat_stack(int *nbrs, int size)
 	return (stack);
 }
 
-// int	main(void)
-// {
-// 	int	nbrs[] =
-// 	{
-// 		1, 7, 3, 6, 2, 9, 0,
-// 	};
-// 	t_list	*a;
-// 	t_list	*b = NULL;
+int	main(void)
+{
+	int	nbrs[] =
+	{
+		1, 7, 3, 6, 2, 9, 0,
+	};
+	t_list	*a;
+	t_list	*b = NULL;
 
-// 	a = creat_stack(nbrs, 7);
-// 	print_stacks(a, b);
-// }
+	a = creat_stack(nbrs, 7);
+	print_stacks(a, b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_printf("\n");
+	print_stacks(a, b);
+	ft_pa(&a, &b);
+	ft_pa(&a, &b);
+	ft_pa(&a, &b);
+	ft_pa(&a, &b);
+	ft_pa(&a, &b);
+	ft_pa(&a, &b);
+	print_stacks(a, b);
+}

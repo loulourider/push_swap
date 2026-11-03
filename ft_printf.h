@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/28 13:52:59 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 09:52:23 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 11:07:20 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int	ft_putchar(char c);
 int	ft_putnbr_base(unsigned long n, char *base);
 int	ft_convert(char c, va_list *args);
 int	ft_putnbr_n(unsigned int n);
+
 #endif

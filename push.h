@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 09:34:25 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 10:45:46 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 11:05:26 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,6 @@ typedef struct s_list
 t_list	*add_back(t_list *head, int value);
 void	print_stacks(t_list *a, t_list *b);
 t_list	*print_cell(t_list *s);
+void	*ft_pb(t_list **a, t_list **b);
+void	*ft_pa(t_list **a, t_list **b);
 #endif
