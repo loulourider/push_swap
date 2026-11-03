@@ -52,3 +52,13 @@ void	lst_up(t_list **lst)
 	last->pile = *lst;
 	*lst = last;
 }
+<<<<<<< HEAD
+=======
+
+
+void ft_addback_b(t_list **b)
+{
+    t_list *tamp;
+    tamp = *a
+}
+>>>>>>> 715a61f (try down)
