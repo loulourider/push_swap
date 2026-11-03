@@ -6,14 +6,14 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/03 09:36:13 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 10:15:44 by username        ###   ########.fr        */
+/*   Updated: 2026/11/03 10:41:11 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 #include "ft_printf.h"
 
-static t_list	*print_cell(t_list *s)
+t_list	*print_cell(t_list *s)
 {
 	if (s)
 	{
