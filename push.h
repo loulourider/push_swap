@@ -3,13 +3,15 @@
 
 typedef struct s_list
 {
-    char    *binaire;
-    int     index;
-    int     chiffre;
-    struct s_list   *pile;
-} t_list
+    int             index;
+    int             chiffre;
+    struct s_list   *next;
+}   t_list;
 
-
-
+// typedef struct s_stacks
+// {
+//     t_list  *a;
+//     t_list  *b;
+// }   t_stacks;
 
 #endif
