@@ -1,25 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   algo.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/03 15:01:09 by username         #+#    #+#              */
+/*   Updated: 2026/11/03 15:03:53 by username        ###   ########.fr        */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	*ft_order66(t_list **a)
+#include "push.h"
+#include "ft_printf.h"
+
+void	ft_order66(t_list **a)
 {
-	int	i;
-	int	j;
-	int count;
-	
-	
-	i = 0;
-	j = 0;
-	while (*a[i])
+	t_list	*cur;
+	t_list	*cmp;
+	int		count;
+
+	cur = *a;
+	while (cur)
 	{
 		count = 0;
-		j = 0;
-		while (*a[j])
+		cmp = *a;
+		while (cmp)
 		{
-			if (*a[j] < *a[i])
-				count = count + 1;
-			j ++;
+			if (cmp->chiffre < cur->chiffre)
+				count++;
+			cmp = cmp->pile;
 		}
-		*a[i] = count;
-		i++;
+		cur->index = count;
+		cur = cur->pile;
 	}
-}	
-
+}

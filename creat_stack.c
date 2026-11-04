@@ -1,39 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   creat_stack.c                                     :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/03 10:29:29 by username         #+#    #+#              */
-/*   Updated: 2026/11/03 12:46:47 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   creat_stack.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/03 10:29:29 by username          #+#    #+#             */
+/*   Updated: 2026/11/04 10:52:39 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 #include "ft_printf.h"
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	while (*lst)
-	{
-		lst = &(*lst)->pile;
-	}
-	(*lst) = new;
-}
-
-t_list	*ft_lstnew(int content)
-{
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->chiffre = content;
-	node->pile = NULL;
-	node->index = 0;
-	return (node);
-}
 
 t_list	*creat_stack(int *nbrs, int size)
 {
@@ -72,10 +50,32 @@ static int	is_correct(char *s)
 	return (1);
 }
 
+static int	has_duplicate(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc - 1)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	parsing(int argc, char **argv)
 {
 	int	j;
+	int	i;
 
+	i = 1;
 	j = 1;
 	while (j < argc)
 	{
@@ -85,6 +85,11 @@ int	parsing(int argc, char **argv)
 			return (0);
 		}
 		j++;
+	}
+	if (has_duplicate(argc, argv))
+	{
+		write(2, "Error\n", 6);
+		return (0);
 	}
 	return (1);
 }
