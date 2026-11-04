@@ -6,7 +6,7 @@
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 09:54:54 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 12:02:36 by lallaire         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:05:40 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int	choose_algo(int strategy, int disorder)
 void	run_algo(t_list **a, t_list **b, int strategy)
 {
 	strategy = choose_algo(strategy, compute_disorder(*a));
-	if (strategy == ALGO_SIMPLE)
-		simple_sort(a, b);
-	else if (strategy == ALGO_MEDIUM)
+	// if (strategy == ALGO_SIMPLE)
+	// 	simple_sort(a, b);
+	if (strategy == ALGO_MEDIUM)
 		chunk_sort(a, b);
 	else
 		radix_sort(a, b);

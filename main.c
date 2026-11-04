@@ -6,7 +6,7 @@
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 12:22:35 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 12:03:21 by lallaire         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:00:23 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 		strategy = parse_flag(argv[1]);
 	fill_stack(&a, argc, argv, 1 + (strategy != 0));
+	print_stacks(a, b);
 	if (ft_lstsize(a) > 1)
 		run_algo(&a, &b, strategy);
+	print_stacks(a, b);
 	return (0);
 }
