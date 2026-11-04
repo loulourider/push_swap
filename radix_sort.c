@@ -6,7 +6,7 @@
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:32:36 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 12:08:56 by lallaire         ###   ########.fr       */
+/*   Updated: 2026/11/04 16:34:44 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	radix_pass(t_list **a, t_list **b, int size, int bit)
 	j = 0;
 	while (j < size)
 	{
-		if ((((*a)->index >> bit) & 1) == 0)
+		if ((((*a)->index << bit) & 1) == 0)
 			count += ft_pb(a, b);
 		else
 			count += lst_down(a, 'a');

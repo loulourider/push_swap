@@ -6,7 +6,7 @@
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:29:29 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 10:52:39 by lallaire         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:11:31 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,7 @@ static int	has_duplicate(int argc, char **argv)
 int	parsing(int argc, char **argv)
 {
 	int	j;
-	int	i;
 
-	i = 1;
 	j = 1;
 	while (j < argc)
 	{

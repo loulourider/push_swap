@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/04 09:54:54 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 12:05:40 by lallaire         ###   ########.fr       */
+/*   Created: 2026/11/04 13:11:06 by username          #+#    #+#             */
+/*   Updated: 2026/11/04 16:27:08 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,25 @@ int	compute_disorder(t_list *a)
 		}
 		cur = cur->pile;
 	}
-	if (pairs == 0)
+	if (!pairs)
 		return (0);
 	return ((int)(mistakes * 10000 / pairs));
 }
 
+int	is_sorted(t_list *a)
+{
+	while (a && a->pile)
+	{
+		if (a->chiffre > a->pile->chiffre)
+			return (0);
+		a = a->pile;
+	}
+	return (1);
+}
+
 int	choose_algo(int strategy, int disorder)
 {
-	if (strategy != 0)
+	if (strategy)
 		return (strategy);
 	if (disorder < 2000)
 		return (ALGO_SIMPLE);
@@ -53,10 +64,10 @@ int	choose_algo(int strategy, int disorder)
 void	run_algo(t_list **a, t_list **b, int strategy)
 {
 	strategy = choose_algo(strategy, compute_disorder(*a));
-	// if (strategy == ALGO_SIMPLE)
-	// 	simple_sort(a, b);
-	if (strategy == ALGO_MEDIUM)
-		chunk_sort(a, b);
-	else
+	if (strategy == ALGO_SIMPLE)
+		tri_selectif(a, b);
+	else if (strategy == ALGO_MEDIUM)
 		radix_sort(a, b);
+	else if (strategy == ALGO_COMPLEX)
+		chunk_sort(a, b);
 }

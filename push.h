@@ -6,7 +6,7 @@
 /*   By: lallaire <lallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 09:34:25 by username          #+#    #+#             */
-/*   Updated: 2026/11/04 12:00:34 by lallaire         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:21:17 by lallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_list
 	struct s_list	*pile;
 }	t_list;
 int		compute_disorder(t_list *a);
+int		is_sorted(t_list *a);
+void	simple_sort(t_list **a, t_list **b);
 int		choose_algo(int strategy, int disorder);
 t_list	*add_back(t_list *head, int value);
 void	print_stacks(t_list *a, t_list *b);
@@ -51,4 +53,6 @@ void	push_max_to_a(t_list **a, t_list **b);
 int		get_max_pos(t_list *b);
 void	run_algo(t_list **a, t_list **b, int strategy);
 int		ft_strcmp(char *s1, char *s2);
+t_list	*find_min(t_list *lst);
+void	tri_selectif(t_list **a, t_list **b);
 #endif
